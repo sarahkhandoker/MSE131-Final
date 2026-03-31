@@ -330,14 +330,4 @@ if st.button("Run Simulation"):
     except Exception as e:
         st.error(f"Simulation error: {e}")
 
-st.subheader("4) Suggested Future Extensions")
-st.markdown(
-    """
-Simple features you can add later:
-- **Crashing:** shorten task times by paying extra cost
-- **Cost-time tradeoff:** compare lower completion time vs higher budget
-- **Resource limits:** restrict how many tasks can happen at once
-- **Scenario analysis:** best case, expected case, worst case
-- **Delay events:** supplier issues, testing failures, redesign loops
-"""
-)
+
