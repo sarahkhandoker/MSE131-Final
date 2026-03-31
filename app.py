@@ -1,3 +1,4 @@
+
 import random
 import math
 from collections import defaultdict
@@ -250,7 +251,7 @@ st.set_page_config(page_title="Project Timeline Simulation", layout="wide")
 st.title("📊 Project Management Simulation: App + Card Launch")
 st.markdown(
     """
-Launch of the App/Card service using Product Management Principles**:
+This app models your startup launch using **project management principles**:
 
 - **Precedence relationships** between tasks
 - **Critical Path Method (CPM)** using forward pass and backward pass
@@ -260,7 +261,6 @@ Launch of the App/Card service using Product Management Principles**:
 """
 )
 
-st.subheader("1) Edit Task Inputs")
 
 default_df = pd.DataFrame(DEFAULT_TASKS)
 edited_df = st.data_editor(
@@ -269,7 +269,7 @@ edited_df = st.data_editor(
     num_rows="dynamic",
 )
 
-target_weeks = st.number_input("Target completion time (weeks)", min_value=1.0, value=20.0, step=0.5)
+target_weeks = st.number_input("Target completion time (weeks)", min_value=1.0, value=18.0, step=0.5)
 iterations = st.slider("Number of simulation runs", min_value=100, max_value=10000, value=3000, step=100)
 
 tasks = edited_df.to_dict(orient="records")
@@ -316,8 +316,16 @@ if st.button("Run Simulation"):
         critical_display["Critical Probability"] = (critical_display["Critical Probability"] * 100).round(1).astype(str) + "%"
         st.dataframe(critical_display, use_container_width=True)
 
+        st.markdown(
+            """
+            """
+        )
 
     except Exception as e:
         st.error(f"Simulation error: {e}")
 
-
+st.subheader("")
+st.markdown(
+    """
+"""
+)
