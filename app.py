@@ -316,16 +316,6 @@ if st.button("Run Simulation"):
         critical_display["Critical Probability"] = (critical_display["Critical Probability"] * 100).round(1).astype(str) + "%"
         st.dataframe(critical_display, use_container_width=True)
 
-        st.markdown(
-            """
-### How this connects to your course
-- **Completion time** is your first performance measure.
-- **Probability of finishing by the launch date** is your second performance measure.
-- **Critical path** shows the chain of tasks that directly controls total duration.
-- **Slack** shows which tasks have flexibility before they delay the project.
-- The simulation captures **uncertainty** by sampling task durations each run.
-"""
-        )
 
     except Exception as e:
         st.error(f"Simulation error: {e}")
