@@ -269,7 +269,7 @@ edited_df = st.data_editor(
     num_rows="dynamic",
 )
 
-target_weeks = st.number_input("Target completion time (weeks)", min_value=1.0, value=18.0, step=0.5)
+target_weeks = st.number_input("Target completion time (weeks)", min_value=1.0, value=20.0, step=0.5)
 iterations = st.slider("Number of simulation runs", min_value=100, max_value=10000, value=3000, step=100)
 
 tasks = edited_df.to_dict(orient="records")
